@@ -29,6 +29,15 @@ class App extends Component {
     }
   }
 
+  printCurrentDate() {
+    var d = new Date();
+    return d.toDateString();
+  }
+
+  // printDates(dateObj) {
+  //   return <h1> { dateObj.date } </h1>
+  // }
+
   render() {
     return (
       <div className="App">
@@ -49,14 +58,13 @@ class App extends Component {
           {
             this.state.dates.map(dateObj => <h1> { dateObj.date } </h1>)
           }
+
+          {/* {
+            this.state.dates.map(dateObj => this.printDates() )
+          } */}
          
           {
-            <h1>DERP { () => 
-              {
-                var d = new Date();
-                <p>"lol"</p>
-              } 
-            } </h1>
+            <h1>Current Date is: { this.printCurrentDate() } </h1>
           }
 
         </header>
